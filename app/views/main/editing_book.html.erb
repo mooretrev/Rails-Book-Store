@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+</head>
+    <body>
+        <h1>Edit Book</h1>
+        <div class="container">
+            <form action="edited_book" method="GET" class="pure-form pure-form-aligned">
+                <input name="id" type="hidden" value="<%=@id%>">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="aligned-name">Title</label>
+                        <input name="title" type="text" id="aligned-name" placeholder="Title" value="<%=@book.title %>"/>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="aligned-password">Author</label>
+                        <input name="author" type="text" id="aligned-password" placeholder="Author" value="<%=@book.author %>"/>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="aligned-email">Genre</label>
+                        <input name="genre" type="text" id="aligned-email" placeholder="Genre" value="<%=@book.genre %>"/>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="aligned-foo">Price</label>
+                        <input name="price" type="text" id="aligned-foo" placeholder="Price" value="<%=@book.price %>"/>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="aligned-foo">Publish Date</label>
+                        <input name="publish_date" type="text" id="aligned-foo" placeholder="Publish Date" value="<%=@book.publish_date %>"/>
+                    </div>
+                    <div class="pure-controls">
+                        <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
