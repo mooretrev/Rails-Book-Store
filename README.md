@@ -28,3 +28,5 @@ The primary objective of this assignment is to help you get familiar with Ruby o
 [Ruby On Rails Linkedin](https://www.linkedin.com/learning/ruby-on-rails-5-essential-training)
 
 [Ruby On Rails - HTTP, MVC and Routes](https://medium.com/the-renaissance-developer/ruby-on-rails-http-mvc-and-routes-f02215a46a84)
+
+Dev Changes
