@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Site</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+</head>
+<body>
+  <ul>
+    <li><a class="active" href="/">Home</a></li>
+  </ul>
+    <h1>Books</h1>
+    <table class="pure-table center">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Price</th>
+                <th>Publish Date</th>
+                <th>Show</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @books.each do |book| %>
+
+                <tr>
+                    <td><%= book.title%></td>
+                    <td><%= book.author%></td>
+                    <td><%= book.genre%></td>
+                    <td><%= book.price%></td>
+                    <td><%= book.publish_date%></td>
+                    <td><a class="pure-button" href="/book/<%= book.id %>?delete=false">Show</a></td>
+                    <td><a class="pure-button" href="/book/<%= book.id %>/edit">Edit</a></td>
+                    <td><a class="pure-button" href="/book/<%= book.id %>?delete=true">Delete</a></td>
+                </tr>
+            </a>
+            <% end %>
+
+        </tbody>
+    </table>
+    
+    <div class="container">
+        <a class="pure-button" href="/book/new">Add Book</a>
+    </div>
+    <% if @action %>
+      <div class="container">
+        <h2 class="center"><%= @action %> book with the title: <%= @title %></h2>
+      </div>
+    <% end %>
+    <%= stylesheet_link_tag :book %>
+</body>
+</html>

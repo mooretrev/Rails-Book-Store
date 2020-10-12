@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Book.create!(title: "Hunger Games", author: "Collins", genre: "Fiction", price: 20.0, publish_date: "2016-09-24")

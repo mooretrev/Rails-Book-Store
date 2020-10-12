@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+</head>
+  <body>
+  <ul>
+    <li><a href="/">Home</a></li>
+  </ul>
+
+  <div class="container center column">
+    <% if @isDelete%>
+      <h1>Confirm that you want to delete the following book</h1>
+    <% end %>
+    <h1><%= @book.title %></h1>
+    <h2>Author: <%= @book.author %></h2>
+    <p>Genre: <%= @book.genre %></p>
+    <p>Price: <%= @book.price %></p>
+    <p>Publish Date: <%= @book.publish_date %></p>
+    <% if @isDelete %>
+          <form action="/book/<%= @book.id %>" method="post">
+        <input name="_method" type="hidden" value="delete" />
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <button class="pure-button" >Confirm Deletion</button>
+      </form>
+
+    <% end %>
+
+  </div>
+  <%= stylesheet_link_tag :book %>
+  </body>
+</html>

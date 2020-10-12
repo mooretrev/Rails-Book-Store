@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+</head>
+    <body>
+<ul>
+    <li><a href="/">Home</a></li>
+  </ul>
+        <h1>Add Book</h1>
+        <div class="container">
+            <form action="/book" method="post" class="pure-form pure-form-aligned">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="aligned-name">Title</label>
+                        <input name="title" type="text" id="title" placeholder="Title" />
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="aligned-password">Author</label>
+                        <input name="author" type="text" id="author" placeholder="Author" />
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="aligned-email">Genre</label>
+                        <select name="genre" id="genre">
+                          <option value="Fiction">Fiction</option>
+                          <option value="Non-fiction">Non-fiction</option>
+                          <option value="Classic">Classic</option>
+                          <option value="Comic book">Comic book</option>
+                          <option value="Fairytale">Fairytale</option>
+                          <option value="Fantasy">Fantasy</option>
+                          <option value="Horror">Horror</option>
+                          <option value="Science">Science</option>
+                          <option value="Thriller">Thriller</option>
+                        </select>                    
+                      </div>
+                    <div class="pure-control-group">
+                        <label for="aligned-foo">Price</label>
+                        <input name="price" type="text" id="price" placeholder="Price" />
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="aligned-foo">Publish Date</label>
+                        <input name="publish_date" type="date" id="aligned-foo" placeholder="Publish Date" />
+                    </div>
+                    <div class="pure-controls">
+                        <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+      <%= stylesheet_link_tag :book %>
+    </body>
+</html>
